@@ -410,7 +410,7 @@ ERROR
     FileUtils.mkdir_p bin_dir
     Dir.chdir(bin_dir) do |dir|
       if name.match(/^node\-/)
-        # @node_installer.install
+        @node_installer.install
       else
         @fetchers[:buildpack].fetch_untar("#{name}.tgz")
       end
