@@ -103,7 +103,7 @@ class LanguagePack::Ruby < LanguagePack::Base
         build_bundler
         post_bundler
         create_database_yml
-        # install_binaries
+        install_binaries
         run_assets_precompile_rake_task
       end
       super
@@ -410,7 +410,7 @@ ERROR
     FileUtils.mkdir_p bin_dir
     Dir.chdir(bin_dir) do |dir|
       if name.match(/^node\-/)
-        @node_installer.install
+        # @node_installer.install
       else
         @fetchers[:buildpack].fetch_untar("#{name}.tgz")
       end
